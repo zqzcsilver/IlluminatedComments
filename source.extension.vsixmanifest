@@ -4,6 +4,7 @@
         <Identity Id="IlluminatedComments.c2b8b682-3276-4567-8d34-bec7e93c0c44" Version="3.0" Language="en-US" Publisher="Uin" />
         <DisplayName>Illuminated Comments</DisplayName>
         <Description xml:space="preserve">You can add an image to your comment, see Getting Started.</Description>
+        <MoreInfo>https://github.com/zqzcsilver/IlluminatedComments/</MoreInfo>
         <License>gpl-3.0.txt</License>
         <GettingStartedGuide>Docs\usermanual.txt</GettingStartedGuide>
         <ReleaseNotes>Docs\releasenotes.txt</ReleaseNotes>
