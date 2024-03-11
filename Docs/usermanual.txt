@@ -1,0 +1,45 @@
+Illuminated Coments User Manual
+===========================
+
+INSTRUCTIONS
+===========================
+To display images in source code for any of the support languages add a comment with the following tag:
+  -image,url='...',scale='...'; 
+or
+  -image,src='...',scale='...'; 
+
+where 'url' or 'src' are mandatory and represent the location of the image, and 'scale' is optional and 
+indicates a factor by which the image should be scaled. Only positive values are considered.
+
+EXAMPLES
+===========================
+
+C#, C, C++
+=====================
+/// -image,url='http://test.com/test.png',scale='0.75';
+or 
+// -image,url='http://test.com/test.png',scale='0.75';
+
+F#
+=====================
+// -image,url='http://test.com/test.png',scale='0.75';
+or
+(* -image,url='http://test.com/test.png',scale='0.75'; *)
+or
+(*
+-image,url='http://test.com/test.png',scale='0.75';
+*)
+
+VB.NET
+=====================
+''' -image,url='http://test.com/test.png',scale='0.75';
+or 
+'' -image,url='http://test.com/test.png',scale='0.75';
+
+JavaScript/TypeScript
+=====================
+// -image,url='http://test.com/test.png',scale='0.75';
+
+Python
+=====================
+# -image,url='http://test.com/test.png',scale='0.75';

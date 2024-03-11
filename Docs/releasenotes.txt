@@ -1,0 +1,42 @@
+Illuminated Comments Release Notes
+
+============================================================
+				copyright	Uin (c) 2024
+============================================================
+
+v3.0.0
+- modify the image tag expression
+- images can be viewed in the Quick Info window
+
+============================================================
+copyright Marius Bancila (c) 2017 - 2019, Ris Adams (c) 2021
+============================================================
+
+v2.0.0
+- renamed project to Illuminated Comments to differentiate from original project
+- support for Visual Studio 2022
+
+v1.4.0
+- support for Visual Studio 2019
+- support for Python
+- support for environment variables $(SolutionDir) and $(ProjectDir)
+- fixed bug with images from collapsed blocks still showing
+
+v1.3.0
+- reloading images if they change
+- performance improvements and bug fixes
+
+v1.2.0
+- fixed problem with Visual Studio hanging
+- use invariant culture for the scale
+
+v1.1.0
+- support for images relative to the document path
+- performance improvements (images displayed only after user stops editing the image tag)
+- sources openly available on github
+
+v1.0.0
+- first public release
+- support for C#, C, C++, F#, VB.NET, JavaScrip, Typescript
+- support for images from web or local disk
+- support for scaling the images
