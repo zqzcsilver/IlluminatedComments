@@ -33,6 +33,8 @@ namespace IlluminatedComments.Patches
                 .GetMethod("GetDescriptionAsync"), null,
                 typeof(CompletionSourcePatch).GetMethod("GetDescriptionAsyncPostfix"));
 
+            //TODO:在方法签名内将图片标记更改为图片
+
             //Harmony.Patch(VSEditorAssembly.GetType("Microsoft.VisualStudio.Language.Intellisense.Implementation.SignatureHelpSessionView")
             //    .GetMethod("DisplayContent", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public),
             //    typeof(SignatureHelpSessionViewPatch).GetMethod("DisplayContentPrefix"));
