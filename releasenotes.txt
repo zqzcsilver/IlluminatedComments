@@ -4,7 +4,12 @@ Illuminated Comments Release Notes
 				copyright	Uin (c) 2024
 ============================================================
 
-v3.0.0
+v3.0.0.1
+- modify the configuration file to a MEF package
+- remove Visual Studio from occupying image files
+- add watcher of image files
+
+v3.0.0.0
 - modify the image tag expression
 - images can be viewed in the Quick Info window
 

@@ -88,6 +88,11 @@ class Program
 - 将图像注释单独放进一个 `<para></para>` 标签里，因为同一标签内的其他注释不会显示；
 - 图像 URL 前请加上 `https://` 或 `http://`。
 
+## 差异
+这与 [risadams](https://github.com/risadams) 的 [Illuminated-comments](https://github.com/risadams/Illuminated-comments) 之间有什么区别？
+-  [Illuminated-comments](https://github.com/risadams/Illuminated-comments) 仅会在源代码页面显示图片注释，而快速信息窗口和自动补全窗口不会。
+-  [Illuminated-comments](https://github.com/risadams/Illuminated-comments) 并不如其预期一样工作，它在读取图片后不会解除对文件的占用，导致其他应用无法读取或删除图片。
+
 ## Credit
 此扩展是基于 [risadams](https://github.com/risadams) 的 [Illuminated-comments](https://github.com/risadams/Illuminated-comments) 开发的。
 

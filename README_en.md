@@ -88,6 +88,11 @@ Two Visual Studio environment variables, namely `$(SolutionDir)` and `$(ProjectD
 - place the image comment in a separate `<para></para>` tag, because rest of the comment in that tag will not be displayed
 - precede web image URL with `https://`/`http://`
 
+## Differences
+What's the difference between this and [Illuminated-comments](https://github.com/risadams/Illuminated-comments) of [risadams](https://github.com/risadams)?
+- [Illuminated-comments](https://github.com/risadams/Illuminated-comments) only image comments are displayed on the source code page, not in the Quick Info window and the Autocomplete window.
+- [Illuminated-comments](https://github.com/risadams/Illuminated-comments) doesn't work as expected, it doesn't unoccupy the file after reading the image, preventing other apps from reading or deleting the image.
+
 ## Credit
 This extension is made based on [Illuminated-comments](https://github.com/risadams/Illuminated-comments) by [risadams](https://github.com/risadams).
 

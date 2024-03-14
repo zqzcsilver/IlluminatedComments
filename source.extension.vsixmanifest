@@ -6,13 +6,13 @@
         <Description xml:space="preserve">You can add an image to your comment, see Getting Started.</Description>
         <MoreInfo>https://github.com/zqzcsilver/IlluminatedComments/</MoreInfo>
         <License>gpl-3.0.txt</License>
-        <GettingStartedGuide>Docs\usermanual.txt</GettingStartedGuide>
-        <ReleaseNotes>Docs\releasenotes.txt</ReleaseNotes>
-        <Icon>Images\logo.png</Icon>
-        <PreviewImage>Images\Preview.png</PreviewImage>
+        <GettingStartedGuide>usermanual.txt</GettingStartedGuide>
+        <ReleaseNotes>releasenotes.txt</ReleaseNotes>
+        <Icon>icon.png</Icon>
+        <PreviewImage>Preview.png</PreviewImage>
         <Tags>image,comment</Tags>
     </Metadata>
-    <Installation InstalledByMsi="true" AllUsers="true">
+    <Installation>
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
@@ -28,7 +28,6 @@
     </Dependencies>
     <Assets>
         <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
     </Assets>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
