@@ -20,9 +20,6 @@ namespace IlluminatedComments.Patches
             AssemblyName assemblyName = new AssemblyName("Microsoft.CodeAnalysis.EditorFeatures");
             assemblyName.KeyPair = new StrongNameKeyPair("31bf3856ad364e35");
             PresentationCoreAssembly = Assembly.Load(assemblyName);
-            assemblyName = new AssemblyName("Microsoft.VisualStudio.Platform.VSEditor");
-            assemblyName.KeyPair = new StrongNameKeyPair("b03f5f7f11d50a3a");
-            VSEditorAssembly = Assembly.Load(assemblyName);
 
             Harmony = new Harmony("IlluminatedComments");
             Harmony.Patch(VSEditorAssembly.GetType("Microsoft.VisualStudio.Language.Intellisense.Implementation.AsyncQuickInfoSession")

@@ -24,6 +24,8 @@ namespace IlluminatedComments
 
             fileSystemWatcher.Changed += FileSystemWatcher_Changed;
             fileSystemWatcher.Renamed += FileSystemWatcher_Changed;
+            fileSystemWatcher.Deleted += FileSystemWatcher_Changed;
+            fileSystemWatcher.Created += FileSystemWatcher_Changed;
         }
 
         /// <summary>
@@ -65,6 +67,8 @@ namespace IlluminatedComments
         {
             fileSystemWatcher.Changed -= FileSystemWatcher_Changed;
             fileSystemWatcher.Renamed -= FileSystemWatcher_Changed;
+            fileSystemWatcher.Deleted -= FileSystemWatcher_Changed;
+            fileSystemWatcher.Created -= FileSystemWatcher_Changed;
             fileSystemWatcher.EnableRaisingEvents = false;
             fileSystemWatcher.Dispose();
         }
@@ -79,7 +83,6 @@ namespace IlluminatedComments
                 Url = imageUrl;
                 OriginalUrl = originalUrl;
                 Scale = scale;
-
                 return true;
             }
             catch (Exception ex)
@@ -100,7 +103,8 @@ namespace IlluminatedComments
             fileSystemWatcher.Filter = Path.GetFileName(uri);
             fileSystemWatcher.EnableRaisingEvents = true;
 
-            if (!File.Exists(uri)) return null;
+            if (!File.Exists(uri))
+                return null;
 
             var image = new BitmapImage
             {
@@ -108,7 +112,10 @@ namespace IlluminatedComments
             };
 
             image.BeginInit();
-            image.UriSource = new Uri(uri, UriKind.Absolute);
+            if (uri.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                image.UriSource = new Uri(uri, UriKind.Absolute);
+            else
+                image.StreamSource = new MemoryStream(File.ReadAllBytes(uri));
             image.EndInit();
 
             if (!image.IsDownloading)
@@ -135,8 +142,21 @@ namespace IlluminatedComments
 
         private void FileSystemWatcher_Changed(object sender, FileSystemEventArgs e) => Dispatcher.Invoke(() =>
         {
-            Source = LoadImage(e.FullPath, string.Empty);
-            Scale = _scale;
+            if (e.ChangeType == WatcherChangeTypes.Deleted || e.ChangeType == WatcherChangeTypes.Renamed)
+            {
+                Source = null;
+                Width = 0;
+                Height = 0;
+            }
+            else
+            {
+                Source = LoadImage(Url, CommentLineTransformSourceProvider.CodeFilePath);
+                if (Source != null)
+                {
+                    Width = Source.Width * Scale;
+                    Height = Source.Height * Scale;
+                }
+            }
             InvalidateVisual();
         });
     }

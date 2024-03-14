@@ -37,7 +37,6 @@ namespace IlluminatedComments
 
         public CommentLineTransformSourceProvider()
         {
-            HarmonyLoader.Load();
         }
 
         [Import] internal SVsServiceProvider ServiceProvider;
@@ -53,6 +52,9 @@ namespace IlluminatedComments
                 CodeFilePath = textDoc.FilePath;
             else
                 CodeFilePath = string.Empty;
+
+            HarmonyLoader.VSEditorAssembly = view.GetType().Assembly;
+            HarmonyLoader.Load();
 
             var manager = view.Properties.GetOrCreateSingletonProperty(() => new CommentsAdornment(view, TextDocumentFactory, ServiceProvider));
             return new CommentLineTransformSource(manager);

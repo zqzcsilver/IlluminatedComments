@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="IlluminatedComments.c2b8b682-3276-4567-8d34-bec7e93c0c44" Version="3.0" Language="en-US" Publisher="Uin" />
+        <Identity Id="IlluminatedComments.c2b8b682-3276-4567-8d34-bec7e93c0c44" Version="3.0.0.1" Language="en-US" Publisher="Uin" />
         <DisplayName>Illuminated Comments</DisplayName>
         <Description xml:space="preserve">You can add an image to your comment, see Getting Started.</Description>
         <MoreInfo>https://github.com/zqzcsilver/IlluminatedComments/</MoreInfo>
@@ -12,14 +12,24 @@
         <PreviewImage>Images\Preview.png</PreviewImage>
         <Tags>image,comment</Tags>
     </Metadata>
-    <Installation>
+    <Installation InstalledByMsi="true" AllUsers="true">
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Pro">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Version="[16.0,18.0)" Id="Microsoft.VisualStudio.Enterprise">
             <ProductArchitecture>amd64</ProductArchitecture>
         </InstallationTarget>
     </Installation>
     <Dependencies>
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
     </Dependencies>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
     <Prerequisites>
         <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[17.0,18.0)" DisplayName="Visual Studio core editor" />
     </Prerequisites>
